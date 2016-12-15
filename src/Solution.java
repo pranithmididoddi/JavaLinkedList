@@ -1,4 +1,6 @@
 public class Solution {
+
+    /**code to reverse a list*/
     public ListNode reverseList(ListNode head) {
 
         ListNode current=head;
@@ -13,6 +15,8 @@ public class Solution {
         }
         return previous;
     }
+
+    /**Insertion of an element in the first position(beginning of the list)*/
 
     ListNode Insert(ListNode head,int val) {
 

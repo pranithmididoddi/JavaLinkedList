@@ -29,6 +29,7 @@ public void printList(){
     }
     System.out.println();
 }
+    
 
 public static void main(String[] args){
     LinkedList list=new LinkedList();
@@ -38,5 +39,7 @@ public static void main(String[] args){
     list.add(30);
 
     list.printList();
+
+
 }
 }

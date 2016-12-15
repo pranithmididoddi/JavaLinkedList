@@ -7,5 +7,8 @@
  {
      int val;
     ListNode next;
+    ListNode(){
+    this.val=val;
+    }
      ListNode(int x) { val = x; }
  }

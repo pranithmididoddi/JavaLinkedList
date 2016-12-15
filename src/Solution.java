@@ -13,4 +13,20 @@ public class Solution {
         }
         return previous;
     }
+
+    ListNode Insert(ListNode head,int val) {
+
+        ListNode current=head;
+
+        while(current.next!=null){
+            current=current.next;
+        }
+        current.next=new ListNode();
+        current.next.val=val;
+
+        return head;
+// This is a "method-only" submission. 
+// You only need to complete this method. 
+
+    }
 }

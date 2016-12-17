@@ -34,6 +34,8 @@ public class Solution {
 
     }
 
+    //find the cycle in the list
+
     public boolean hasCycle(ListNode head) {
 
         ListNode fast=head;

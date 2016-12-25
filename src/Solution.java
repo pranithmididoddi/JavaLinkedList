@@ -29,7 +29,7 @@ public class Solution {
         current.next.val=val;
 
         return head;
-/**This is a "method-only" submission.
+/*This is a "method-only" submission.
 You only need to complete this method. */
 
     }

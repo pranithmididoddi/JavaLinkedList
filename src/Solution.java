@@ -29,8 +29,8 @@ public class Solution {
         current.next.val=val;
 
         return head;
-// This is a "method-only" submission. 
-// You only need to complete this method. 
+/**This is a "method-only" submission.
+You only need to complete this method. */
 
     }
 
@@ -52,4 +52,8 @@ public class Solution {
         return false;
 
     }
+ /**
+  */
+
+
 }

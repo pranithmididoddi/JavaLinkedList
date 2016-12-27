@@ -115,5 +115,32 @@ You only need to complete this method. */
      return dummy.next;
  }
 
+ /**Merge two sorted lists*/
+ public ListNode mergeTwoLists(ListNode a, ListNode b) {
+     ListNode head=new ListNode(0);
+     ListNode p=head;
+
+     while(a!=null || b!=null){
+         if(a!=null && b!=null){
+             if(a.val<b.val){
+                 p.next=a;
+                 a=a.next;
+             }
+             else{
+                 p.next=b;
+                 b=b.next;
+             }
+             p=p.next;
+         }else if(a==null){
+             p.next=b;
+             break;
+         }else if(b==null){
+             p.next=a;
+             break;
+         }
+
+     }
+     return head.next;
+ }
 
 }

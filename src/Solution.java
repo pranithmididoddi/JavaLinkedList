@@ -1,3 +1,4 @@
+import java.util.*;
 public class Solution {
 
     /**code to reverse a list*/
@@ -68,6 +69,28 @@ You only need to complete this method. */
 
          current=current.next;
          check=check.next;
+     }
+     return true;
+ }
+
+ /** LinkedList palindrome with Stack*/
+
+ public boolean isaPalindrome(ListNode head) {
+     ListNode current=head;
+     ListNode fast=head;
+     Stack<Integer> stack=new Stack<Integer>();
+
+     while(fast!=null && fast.next!=null){
+         stack.push(current.val);
+         current=current.next;
+         fast=fast.next.next;
+     }
+
+     if(fast!=null) current=current.next;
+
+     while(current!=null){
+         if(stack.pop().intValue() != current.val) return false;
+         current=current.next;
      }
      return true;
  }

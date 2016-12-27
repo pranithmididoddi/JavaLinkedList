@@ -144,7 +144,7 @@ You only need to complete this method. */
  }
 
  /**remove the duplictaes*/
- public ListNode deleteDuplicates(ListNode head) {
+ public ListNode deleteDuplicatesone(ListNode head) {
 
      ListNode slow=head;
      ListNode fast=head.next;

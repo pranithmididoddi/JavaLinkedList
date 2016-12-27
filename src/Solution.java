@@ -143,4 +143,21 @@ You only need to complete this method. */
      return head.next;
  }
 
+ /**remove the duplictaes*/
+ public ListNode deleteDuplicates(ListNode head) {
+
+     ListNode slow=head;
+     ListNode fast=head.next;
+
+     while(fast!=null){
+         if(slow.val==fast.val){
+             slow.next=fast.next;
+             fast=fast.next;
+         }else{
+             slow=fast;
+             fast=fast.next;
+         }
+     }
+     return head;
+ }
 }

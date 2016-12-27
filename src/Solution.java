@@ -55,5 +55,24 @@ You only need to complete this method. */
  /**
   */
 
+ /** LinkedList palindrome check naive approach
+  * 14/25 cases passed on leetcode*/
+
+ public boolean isPalindrome(ListNode head) {
+     ListNode current=head;
+     ListNode check=reverseList(head);
+
+     while(current!=null){
+         if(current.val!=check.val)
+             return false;
+
+         current=current.next;
+         check=check.next;
+     }
+     return true;
+ }
+
+
+
 
 }

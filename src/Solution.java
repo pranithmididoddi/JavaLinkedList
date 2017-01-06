@@ -227,6 +227,33 @@ You only need to complete this method. */
         }
 
     }
+
+    public ListNode rotateRight(ListNode head, int n) {
+
+        ListNode slow=head;
+        ListNode fast=head;
+
+        while(n>0){
+            n--;
+            fast=fast.next;
+
+            if(fast==null) fast=head;
+        }
+
+        if(fast==null || slow==fast) return head;
+
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next;
+        }
+
+        ListNode temp=slow.next;
+        slow.next=null;
+        fast.next=head;
+
+        return temp;
+
+    }
 }
 
 

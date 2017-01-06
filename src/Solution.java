@@ -254,6 +254,24 @@ You only need to complete this method. */
         return temp;
 
     }
+
+    public int maxSubArray(int[] nums) {
+        int max=nums[0];
+        int[] sum=new int[nums.length];
+        //int result=0;
+        sum[0]=nums[0];
+
+        if(nums.length==1) return nums[0];
+
+        for(int i=1;i<nums.length;i++){
+            sum[i]=Math.max(nums[i],sum[i-1]+nums[i]);
+            max=Math.max(max,sum[i]);
+
+        }
+
+        return max;
+
+    }
 }
 
 

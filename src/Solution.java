@@ -272,6 +272,31 @@ You only need to complete this method. */
         return max;
 
     }
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+
+        ListNode fast=head;
+        ListNode slow=head;
+
+        while(n>0){
+            n--;
+            fast=fast.next;
+        }
+
+        if(fast == null){
+            return head.next;
+        }
+
+        if(fast==null || fast==head) return head;
+
+        while(fast.next!=null){
+            slow=slow.next;
+            fast=fast.next;
+        }
+        slow.next=slow.next.next;
+
+        return head;
+    }
 }
 
 

@@ -272,6 +272,7 @@ You only need to complete this method. */
         return max;
 
     }
+    /**Remove nth element from the end*/
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
 

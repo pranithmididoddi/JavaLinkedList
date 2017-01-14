@@ -368,6 +368,35 @@ You only need to complete this method. */
             return leftDummy.next;
 
         }
+/**odd even list*/
+
+    public ListNode oddEvenList(ListNode head) {
+
+        ListNode leftDummy=new ListNode(0);
+        ListNode rightDummy=new ListNode(0);
+
+        ListNode left=leftDummy;
+        ListNode right=rightDummy;
+
+        while(head!=null){
+            if(head.val%2==0){
+                left.next=head;
+                left=head;
+            }
+            else{
+                right.next=head;
+                right=head;
+            }
+            head=head.next;
+        }
+
+        left.next=null;
+        right.next=leftDummy.next;
+
+        return rightDummy.next;
+    }
+
+
 }
 
 

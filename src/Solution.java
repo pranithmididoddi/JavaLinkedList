@@ -305,7 +305,7 @@ You only need to complete this method. */
         }
 
         ListNode mid = findMiddle(head);
-        ListNode tail = reverse(mid.next);
+        ListNode tail = reverseList(mid.next);
         mid.next = null;
 
         merge(head, tail);
@@ -323,20 +323,6 @@ You only need to complete this method. */
         return slow;
     }
 
-    public ListNode reverse(ListNode head){
-        ListNode current=head;
-        ListNode previous=null;
-        ListNode nxt=null;
-
-        while(current!=null){
-            nxt=current.next;
-            current.next=previous;
-            previous=current;
-            current=nxt;
-        }
-
-        return previous;
-    }
 
     private void merge(ListNode head1, ListNode head2) {
         int index = 0;
@@ -350,7 +336,7 @@ You only need to complete this method. */
                 head2 = head2.next;
             }
             dummy = dummy.next;
-            index ++;
+            index++;
         }
         if (head1 != null) {
             dummy.next = head1;
@@ -358,6 +344,30 @@ You only need to complete this method. */
             dummy.next = head2;
         }
     }
+
+        public ListNode partition(ListNode head, int x) {
+
+            ListNode leftDummy=new ListNode(0);
+            ListNode rightDummy=new ListNode(0);
+
+            ListNode left=leftDummy;
+            ListNode right=rightDummy;
+
+            while(head!=null){
+                if(head.val<x){
+                    left.next=head;
+                    left=head;
+                }else{
+                    right.next=head;
+                    right=head;
+                }
+                head=head.next;
+            }
+            right.next=null;
+            left.next=rightDummy.next;
+            return leftDummy.next;
+
+        }
 }
 
 

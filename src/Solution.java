@@ -423,8 +423,58 @@ You only need to complete this method. */
         node.val=node.next.val;
         node.next=node.next.next;
 
+    }
 
+    /**Sort lists*/
+    public ListNode sortList(ListNode head) {
+        if(head==null || head.next==null) return head;
 
+        ListNode mid=findMiddleofList(head);
+        ListNode right=sortList(mid.next);
+        mid.next=null;
+        ListNode left=sortList(head);
+
+        return mergeLists(left,right);
+    }
+
+    public ListNode findMiddleofList(ListNode head){
+        ListNode current=head;
+        ListNode nxt=head.next;
+
+        while(nxt!=null && nxt.next!=null){
+            current=current.next;
+            nxt=nxt.next.next;
+        }
+
+        return current;
+    }
+
+    public ListNode mergeLists(ListNode h1, ListNode h2){
+        ListNode dummy=new ListNode(0);
+        ListNode node=dummy;
+
+        while(h1!=null || h2!=null){
+            if(h1!=null && h2!=null){
+                if(h1.val<h2.val){
+                    node.next=h1;
+                    h1=h1.next;
+                }else{
+                    node.next=h2;
+                    h2=h2.next;
+                }
+                node=node.next;
+            }
+            else if(h1==null){
+                node.next=h2;
+                break;
+            }
+            else if(h2==null){
+                node.next=h1;
+                break;
+            }
+        }
+
+        return dummy.next;
     }
 
 

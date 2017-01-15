@@ -418,6 +418,14 @@ You only need to complete this method. */
         return dummy.next;
 
     }
+    /**Delete node from linked list*/
+    public void deleteNode(ListNode node) {
+        node.val=node.next.val;
+        node.next=node.next.next;
+
+
+
+    }
 
 
 }

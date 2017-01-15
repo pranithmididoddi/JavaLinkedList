@@ -396,6 +396,8 @@ You only need to complete this method. */
         return rightDummy.next;
     }
 
+    /**Swap pairs in a linked list*/
+
     public ListNode swapPairs(ListNode head) {
 
         ListNode dummy=new ListNode(0);

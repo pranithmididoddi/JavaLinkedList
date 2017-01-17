@@ -449,7 +449,7 @@ You only need to complete this method. */
         return current;
     }
 
-    public ListNode mergeLists(ListNode h1, ListNode h2){
+ public ListNode mergeLists(ListNode h1, ListNode h2){
         ListNode dummy=new ListNode(0);
         ListNode node=dummy;
 
@@ -477,6 +477,26 @@ You only need to complete this method. */
         return dummy.next;
     }
 
+    /**LinkedList remove element*/
+
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode dummy=new ListNode(0);
+        dummy.next=head;
+        ListNode p=dummy;
+
+        while(p.next!=null){
+            if(p.next.val==val){
+                ListNode next=p.next;
+                p.next=next.next;
+            }
+            else{
+                p=p.next;
+            }
+        }
+        return dummy.next;
+    }
+
+    
 
 }
 

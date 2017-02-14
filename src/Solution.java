@@ -529,6 +529,22 @@ You only need to complete this method. */
       return dummy.next;
   }
 
+    public ListNode deduplicate(ListNode head) {
+
+        if(head==null) return head;
+
+        ListNode p=head;
+
+        while(p!=null && p.next!=null){
+            if(p.val==p.next.val){
+                p.next=p.next.next;
+            }else{
+                p=p.next;
+            }
+        }
+        return head;
+    }
+
 }
 
 

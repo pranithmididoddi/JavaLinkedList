@@ -545,6 +545,54 @@ You only need to complete this method. */
         return head;
     }
 
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode p1=headA;
+        ListNode p2=headB;
+        int l1=0;
+        int l2=0;
+
+        if (p1 == null || p2 == null)
+            return null;
+
+        while(p1!=null){
+            l1++;
+            p1=p1.next;
+        }
+
+        while(p2!=null){
+            l2++;
+            p2=p2.next;
+        }
+
+        p1=headA;
+        p2=headB;
+
+        if(l1>l2){
+            int i=0;
+            int diff=l1-l2;
+
+            while(i<diff){
+                p1=p1.next;
+                i++;
+            }
+        }else{
+            int i=0;
+            int diff=l2-l1;
+
+            while(i<diff){
+                p2=p2.next;
+                i++;
+            }
+        }
+
+        while(p1!=p2){
+            p1=p1.next;
+            p2=p2.next;
+        }
+
+        return p1;
+    }
+
 }
 
 

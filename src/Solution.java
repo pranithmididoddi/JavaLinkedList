@@ -593,6 +593,37 @@ You only need to complete this method. */
         return p1;
     }
 
+    public RandomListNode copyRandomList(RandomListNode head) {
+        if(head==null) return null;
+        RandomListNode p=head;
+
+        while(p!=null){
+            RandomListNode copy=new RandomListNode(p.label);
+            copy.next=p.next;
+            p.next=copy;
+            p=copy.next;
+        }
+
+        p=head;
+
+        while(p!=null){
+            if (p.random != null){
+                p.next.random=p.random.next;
+            }
+            p=p.next.next;
+        }
+
+        p=head;
+        RandomListNode copyList=p.next;
+        while(p!=null && p.next!=null){
+            RandomListNode temp=p.next;
+            p.next=temp.next;
+            p=temp;
+        }
+
+        return copyList;
+    }
+
 }
 
 

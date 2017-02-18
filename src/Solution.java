@@ -624,6 +624,23 @@ You only need to complete this method. */
         return copyList;
     }
 
+    public void addtolist() {
+        List<List<Integer>> blist = new ArrayList<>();
+
+        List<Integer> list = new ArrayList<>();
+        List<Integer> evenlist = new ArrayList<>();
+        List<Integer> anotherlist = new ArrayList<>();
+        List<Integer> lblist = new ArrayList<>();
+        List<Integer> last = new ArrayList<>();
+
+        list.add(2);
+        list.add(5);
+        list.add(7);
+        list.add(9);
+
+        Collections.reverse(list);
+        System.out.println(list);
+    }
 }
 
 

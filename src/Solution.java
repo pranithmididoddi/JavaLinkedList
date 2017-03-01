@@ -641,6 +641,33 @@ You only need to complete this method. */
         Collections.reverse(list);
         System.out.println(list);
     }
+
+    public ListNode removeNth(ListNode head, int n) {
+
+        if(n<=0){
+            return null;
+        }
+
+        ListNode dummy=new ListNode(0);
+        dummy.next=head;
+
+        ListNode slow=dummy;
+
+        for(int i=0;i<n;i++){
+            if(head==null){
+                return null;
+            }
+            head=head.next;
+        }
+
+        while(head !=null){
+            head=head.next;
+            slow=slow.next;
+        }
+
+        slow.next=slow.next.next;
+        return dummy.next;
+    }
 }
 
 

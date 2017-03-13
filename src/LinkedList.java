@@ -42,4 +42,40 @@ public static void main(String[] args){
 
 
 }
+
+    public ListNode reverseBetween(ListNode head, int m, int n) {
+
+        if(head==null) return null;
+
+        ListNode dummy=new ListNode(0);
+        dummy.next=head;
+        head=dummy;
+
+        for(int i=1;i<m;i++){
+            if(head==null) return head;
+
+            head=head.next;
+        }
+
+        ListNode premNode=head;
+        ListNode mnode=head.next;
+        ListNode nnode=mnode;
+        ListNode postnnode=mnode.next;
+
+        for(int i=m;i<n;i++){
+
+            if(postnnode==null) return null;
+
+            ListNode temp=postnnode.next;
+            postnnode.next=nnode;
+            nnode=postnnode;
+            postnnode=temp;
+        }
+
+        mnode.next=postnnode;
+        premNode.next=nnode;
+
+
+        return dummy.next;
+    }
 }
